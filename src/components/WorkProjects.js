@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const WorkProject = () => {
-    return (
-        <div>
-            WorkProject Component/Page
-        </div>
-    )
-}
+  return <div>WorkProject Component/Page</div>;
+};
 
-export default WorkProject
+export default WorkProject;

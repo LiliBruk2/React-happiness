@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const BlogPage = () => {
-    return (
-        <div>
-            BlogPage Component/Page
-        </div>
-    )
-}
+  return <div>BlogPage Component/Page</div>;
+};
 
-export default BlogPage
+export default BlogPage;

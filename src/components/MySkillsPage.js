@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const MySkillsPage = () => {
-    return (
-        <div>
-            MySkillsPage Component/Page
-        </div>
-    )
-}
+  return <div>MySkillsPage Component/Page</div>;
+};
 
-export default MySkillsPage
+export default MySkillsPage;
