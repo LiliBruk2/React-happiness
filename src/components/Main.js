@@ -1,8 +1,8 @@
 import React, { Children, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 // import { Container } from 'tsparticles'
 import { NavLink } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+// import  { keyframes } from "styled-components";
 import PowerButton from "../subComponents/PowerBotton";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
@@ -87,8 +87,8 @@ to {
 
 const Center = styled.button`
   position: absolute;
-  top: ${(props) => (props.click ? "85%" : "50%")};
-  left: ${(props) => (props.click ? "92%" : "50%")};
+  top: ${(props) => props.click ? "85%" : "50%"};
+  left: ${(props) => props.click ? "92%" : "50%"};
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
@@ -103,11 +103,11 @@ const Center = styled.button`
 
   // rotate
   & > :first-child {
-    animate: ${rotate} infinite 1.5s linear;
+    animation: ${rotate} infinite 1.5s linear;
   }
 
   & > :last-child {
-    display: ${props => click ? 'none' : 'inline-block'};
+    display: ${props => onclick ? 'none' : 'inline-block'};
     padding-top: 1rem;
   }
 `;
@@ -192,4 +192,4 @@ const Main = () => {
 
 export default Main;
 
-// https://youtu.be/jcohAIaSy2M?list=PLjxZxD6BDkeZLbkPNgGxZklwPdhIAuYqV&t=3350
+https://youtu.be/jcohAIaSy2M?list=PLjxZxD6BDkeZLbkPNgGxZklwPdhIAuYqV&t=3613
