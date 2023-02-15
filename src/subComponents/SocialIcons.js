@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Github, Facebook, Twitter } from "../components/AllSvgs";
+import { DarkTheme } from "../components/Theme";
 
 const Icons = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ const Line = styled.span`
   background-color: ${(props) => props.theme.text};
 `;
 
-const SocialIcons = () => {
+const SocialIcons = (props) => {
   return (
     <Icons>
       <div>
@@ -33,20 +34,20 @@ const SocialIcons = () => {
           target="__blank"
           to={{ pathname: "https://github.com/LiliBruk2" }}
         >
-          <Github width={25} height={25} fill="currentColor" />
+          <Github width={25} height={25} fill={props.theme === "dark" ?  DarkTheme.text : DarkTheme.body  } />
         </NavLink>
       </div>
       <div>
         {/* Purple text color */}
         {/* Should be LinkedIn */}
         <NavLink target="__blank" to={{ pathname: "#" }}>
-          <Facebook width={25} height={25} fill="currentColor" />
+          <Facebook width={25} height={25} fill={props.theme === "dark" ?  DarkTheme.text : DarkTheme.body  } />
         </NavLink>
       </div>
       <div>
         {/* Should be behence or some other design community */}
         <NavLink target="__blank" to={{ pathname: "#" }}>
-          <Twitter width={25} height={25} fill="currentColor" />
+          <Twitter width={25} height={25} fill={props.theme === "dark" ?  DarkTheme.text : DarkTheme.body  } />
         </NavLink>
       </div>
       <Line />

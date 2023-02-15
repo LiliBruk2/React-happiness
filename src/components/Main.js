@@ -53,8 +53,8 @@ const Blog = styled(NavLink)`
 `;
 
 const Work = styled(NavLink)`
-  color: ${(props) => props.theme.text};
-  position: absolute;
+color: ${(props) => props.click ? props.theme.body : props.theme.text};
+position: absolute;
   top: 50%;
   //   left: 2rem;
   left: calc(1rem + 2vw);
@@ -66,11 +66,10 @@ const Work = styled(NavLink)`
 const buttonBar = styled.div`
 position: absolute;
 bottom: 1rem;
-left: 0;
-right: 0;
-width: 100%
-
-display:flex;
+left: 0px;
+right: 0px;
+width: 100%;
+display: flex;
 justify-content: space-evenly;
 `;
 
@@ -99,7 +98,7 @@ const Center = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
 
   // rotate
   & > :first-child {
@@ -108,6 +107,7 @@ const Center = styled.button`
 
   & > :last-child {
     display: ${props => onclick ? 'none' : 'inline-block'};
+    // display: ${props => props.click ? 'none' : 'inline-block'};
     padding-top: 1rem;
   }
 `;
@@ -115,29 +115,30 @@ const Center = styled.button`
 const DarkDiv = styled.div`
 position: absolute;
 top: 0;
+background-color:#000;
 bottom: 0;
 right: 50%;
-width: 100%;
-height: 100%;
+width: ${props => props.click ? '50%' : '0%'};
+height:  ${props => props.click ? '100%' : '0%'};;
 z-index: 1;
-`
+transition: height 0.5s ease, width 1s ease 0.5s;
+`;
 
 const About = styled(NavLink)`
-  color: ${(props) => props.theme.text};
-  // position: absolute;
-  // top: 50%;
-  // left: 2rem;
-  // transform: translate(-50%, -50%) rotate(-90deg) ;
+  color: ${(props) => props.click ? props.theme.body : props.theme.text};
+  position: absolute;
+  top: 90%;
+  left: 55%;
+   transform: translate( 100%, -40%) rotate(0deg) ;
   text-decoration: none;
   z-index: 1;
 `;
 
 const Skills = styled(NavLink)`
-  color: ${(props) => props.theme.text};
-  // position: absolute;
-  // top: 50%;
-  // left: 2rem;
-  // transform: translate(-50%, -50%) rotate(-90deg) ;
+  position:absolute;
+  top: 90%;
+  left: 3rem;
+   transform: translate( 100%, -40%) rotate(0deg) ;
   text-decoration: none;
   z-index: 1;
 `;
@@ -148,17 +149,18 @@ const Main = () => {
 
   return (
     <MainContainer>
+      <DarkDiv click={click} />
+
       <ContainerTwo>
         <PowerButton />
         <LogoComponent />
-        <SocialIcons />
-        <DarkDiv click={click}/>
+        <SocialIcons theme={click ? 'dark' : 'light'} />
         <Center click={click}>
           {/* width & hieght used to be 200  like this : height={200}*/}
           <YinYang
             onClick={() => handleClick()}
-            width={click ? 120 : 200}
-            height={click ? 120 : 200}
+            width={click ? 100 : 200}
+            height={click ? 100 : 200}
             fill="currentColor"
           />
           <span>Click Here</span>
@@ -173,11 +175,11 @@ const Main = () => {
         <Blog to="/blog">
           <h2>Blog</h2>
         </Blog>
-        <Work to="/work">
+        <Work to="/work" click={click}>
           <h2>work</h2>
         </Work>
         <buttonBar>
-          <About to="/about">
+          <About to="/about" click={click}>
             <h2>About.</h2>
           </About>
 
@@ -192,4 +194,4 @@ const Main = () => {
 
 export default Main;
 
-https://youtu.be/jcohAIaSy2M?list=PLjxZxD6BDkeZLbkPNgGxZklwPdhIAuYqV&t=3613
+// https://youtu.be/jcohAIaSy2M?list=PLjxZxD6BDkeZLbkPNgGxZklwPdhIAuYqV&t=4077
