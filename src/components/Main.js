@@ -194,4 +194,3 @@ const Main = () => {
 
 export default Main;
 
-// https://youtu.be/jcohAIaSy2M?list=PLjxZxD6BDkeZLbkPNgGxZklwPdhIAuYqV&t=4077

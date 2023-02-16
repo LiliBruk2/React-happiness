@@ -12,8 +12,8 @@ const Logo = styled.h1`
   z-index: 3;
 `;
 
-const LogoComponent = () => {
-  return <Logo>LB</Logo>;
+const LogoComponent = (props) => {
+  return <Logo color={props.theme}>LB</Logo>;
 };
 
 export default LogoComponent;
