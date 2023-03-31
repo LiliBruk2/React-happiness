@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { lightTheme } from "./components/Theme";
+import { LightTheme } from "./components/Theme";
 import GlobalStyle from "./globalStyles";
 
 import Main from "./components/Main";
@@ -14,7 +14,7 @@ function App() {
     <>
       <GlobalStyle />
 
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={LightTheme}>
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/about" component={AboutPage} />

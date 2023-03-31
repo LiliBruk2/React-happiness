@@ -1,12 +1,17 @@
-import React, { Children, useState } from "react";
-import styled, { keyframes } from "styled-components";
-// import { Container } from 'tsparticles'
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
 // import  { keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { NavLink } from "react-router-dom";
 import PowerButton from "../subComponents/PowerBotton";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import { YinYang } from "./AllSvgs";
+import { DarkTheme } from "../components/Theme";
+
+import Intro from "./Intro";
+
+// import { Container } from 'tsparticles'
+
 // https://stackoverflow.com/questions/44441734/react-js-error-is-not-defined-react-jsx-no-undef
 
 const MainContainer = styled.div`
@@ -19,7 +24,7 @@ const MainContainer = styled.div`
 
   h2,
   h3,
-  h4,
+  h4,n
   h5,
   h6 {
     font-family: "Karla", sans-serif;
@@ -153,7 +158,7 @@ const Main = () => {
 
       <ContainerTwo>
         <PowerButton />
-        <LogoComponent />
+        <LogoComponent theme={click ? 'dark' : 'light'} />
         <SocialIcons theme={click ? 'dark' : 'light'} />
         <Center click={click}>
           {/* width & hieght used to be 200  like this : height={200}*/}
@@ -188,9 +193,11 @@ const Main = () => {
           </Skills>
         </buttonBar>
       </ContainerTwo>
+      {click ? <Intro click={click}/> : null }
     </MainContainer>
   );
 };
 
 export default Main;
 
+// https://youtu.be/jcohAIaSy2M?list=PLjxZxD6BDkeZLbkPNgGxZklwPdhIAuYqV&t=4704

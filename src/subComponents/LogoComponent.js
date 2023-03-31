@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import {  DarkTheme } from "../components/Theme";
+
 
 const Logo = styled.h1`
   display: inline-block;
-  color: ${(props) => props.theme.text};
-  font-family: system-ui;
+  color: ${(props) => props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
+  // Font style
+  // font-family: ;
 
   position: fixed;
   left: 2rem;
@@ -13,7 +16,10 @@ const Logo = styled.h1`
 `;
 
 const LogoComponent = (props) => {
-  return <Logo color={props.theme}>LB</Logo>;
-};
+  return (
+     <Logo color={props.theme}>LB
+     </Logo>
+  );
+    };
 
 export default LogoComponent;

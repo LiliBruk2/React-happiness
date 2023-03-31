@@ -1,6 +1,6 @@
 // Theme for light and dark mode.
 
-export const lightTheme = {
+ const LightTheme = {
   body: "#FCF6F4",
   text: "#000000",
   fontFamily: "'Source Sans Pro', sans-serif",
@@ -8,10 +8,14 @@ export const lightTheme = {
   textRgba: "0,0,0",
 };
 
-export const DarkTheme = {
+ const DarkTheme = {
   body: "#000000",
   text: "#FCF6F4",
   fontFamily: "'Source Sans Pro', sans-serif",
   textRgba: "252, 246, 244",
   bodyRgba: "0,0,0",
 };
+
+
+export { LightTheme, DarkTheme };
+

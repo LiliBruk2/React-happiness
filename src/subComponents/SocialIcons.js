@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Github, Facebook, Twitter } from "../components/AllSvgs";
-import { DarkTheme } from "../components/Theme";
+import {  DarkTheme } from "../components/Theme";
 
 const Icons = styled.div`
   display: flex;
@@ -21,8 +21,7 @@ const Icons = styled.div`
 const Line = styled.span`
   width: 2px;
   height: 8rem;
-  // background-color: ${(props) => props.theme.text};
-  background-color: ${props => props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
+  background-color: ${(props) => props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
 `;
 
 const SocialIcons = (props) => {
@@ -51,7 +50,7 @@ const SocialIcons = (props) => {
           <Twitter width={25} height={25} fill={props.theme === "dark" ?  DarkTheme.text : DarkTheme.body  } />
         </NavLink>
       </div>
-      <Line theme={props.theme} />
+      <Line color={props.theme} />
     </Icons>
   );
 };
